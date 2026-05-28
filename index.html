@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mt. Yalibu Treks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .nav-links a.active {
+            color: #3498db;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #3498db;
+        }
+
+        .section {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Home Page */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('background.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+            transform: translateY(-3px);
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Single Block for What We Do */
+        .single-block {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .single-block h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+
+        /* Contact Page */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            padding: 12px 24px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .social-links a.email {
+            background: #EA4335;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #2c3e50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Mt.Yalibu Treks</div>
+            <div class="nav-links">
+                <a onclick="showSection('home')" class="active" id="home-tab">Home</a>
+                <a onclick="showSection('contact')" id="contact-tab">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="section active">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Mt. Yalibu Treks</h1>
+                <p>Creating beautiful experiences through hikking.</p>
+                <a href="#" onclick="showSection('contact')" class="btn">Get In Touch</a>
+            </div>
+        </div>
+
+        <!-- What We Do - Single Block -->
+        <div class="content">
+            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem;">What We Do</h2>
+            
+            <div class="single-block">
+                <h3>Facilitate The Climbing of the Mountain</h3>
+                <p>Our tours are fully guided trekking experiences through the remote mountains and villages of Papua New Guinea. This is not luxury travel — expect rough terrain, changing weather, river crossings, basic village accommodation, and physically demanding hikes. Every expedition is led by experienced local guides familiar with the land and surrounding communities.</p>
+                <p style="margin-top: 1.5rem;"><b>Standard Guided Trek Package — USD $800</b>
+<br>
+Includes Transportation, guided trekking experience, local landowner payment, accomodation, and on-ground expedition support.</p></br>
+                    <p style="margin-top: 1.5rem;"><b>Full Travel Package — USD $1500</b>
+
+<br>Includes everything in the standard package plus return domestic airfare:
+
+Port Moresby → Mount Hagen
+Mount Hagen → Port Moresby</p></br>
+
+<p style="margin-top: 1.5rem;">For travelers seeking real adventure, authentic culture, and the raw beauty of Papua New Guinea.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-container">
+            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem;">Get in Touch</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;">
+                Want to Visit I love to hear from you.
+            </p>
+
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <p style="font-size: 1.1rem;">pngwildtreks@gmail.com</p>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pngwildtreks@gmail.com" class="btn" style="margin-top: 1rem; background: #EA4335;">Send Email</a>
+                </div>
+                
+                
+            </div>
+
+            <div style="text-align: center; margin-top: 4rem;">
+               
+                <div class="social-links">
+               
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pngwildtreks@gmail.com" class="email">✉️ Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Mt.YalibuTreks. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showSection(section) {
+            document.querySelectorAll('.section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            
+            document.getElementById(section).classList.add('active');
+            
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.id === section + '-tab') {
+                    link.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
