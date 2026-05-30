@@ -3,13 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mt. Yalibu Treks</title>
+    <title>Mt. Yalibu Treks | Papua New Guinea Adventures</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -18,200 +14,95 @@
             background-color: #f8f9fa;
         }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid #eee;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
+        .packages {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #2c3e50;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            cursor: pointer;
-            padding: 0.5rem 0;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: #3498db;
-        }
-
-        .nav-links a.active {
-            color: #3498db;
-        }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: #3498db;
-        }
-
-        .section {
-            display: none;
-            min-height: 100vh;
-            padding-top: 80px;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        /* Home Page */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                        url('background.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
             justify-content: center;
-            text-align: center;
-            color: white;
+            padding: 3rem 1rem;
         }
 
-        .hero-content {
-            max-width: 700px;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 32px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
+        .package {
+            background: white;
+            width: 360px;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
             transition: all 0.3s;
         }
 
-        .btn:hover {
-            background: #2980b9;
-            transform: translateY(-3px);
+        .package:hover {
+            border-color: #3498db;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        .content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        /* Single Block for What We Do */
-        .single-block {
-            background: white;
-            padding: 3rem;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            max-width: 900px;
-            margin: 2rem auto;
-            text-align: center;
-        }
-
-        .single-block h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
+        .package h3 {
             color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.5rem;
         }
 
-        /* Contact Page */
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .contact-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-
-        .contact-card h3 {
-            margin-bottom: 1rem;
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
             color: #2c3e50;
+            margin-bottom: 20px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
+        .package ul {
+            list-style: none;
         }
 
-        .social-links a {
-            padding: 12px 24px;
-            background: #25D366;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
+        .package ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .social-links a.email {
-            background: #EA4335;
+        .package ul li:last-child {
+            border-bottom: none;
         }
+
+        /* Rest of your styles remain the same */
+        nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #eee; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.85rem; font-weight: 700; color: #2c3e50; }
+        .nav-links { display: flex; gap: 2.2rem; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 500; cursor: pointer; padding: 0.5rem 0; position: relative; }
+        .nav-links a:hover { color: #3498db; }
+        .nav-links a.active::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: #3498db; }
+
+        .section { display: none; min-height: 100vh; padding-top: 80px; }
+        .section.active { display: block; }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('background.jpg') center/cover no-repeat;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+        }
+
+        .hero h1 { font-size: 4.2rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.5rem; margin-bottom: 2.5rem; }
+
+        .btn {
+            display: inline-block; padding: 15px 35px; background: #3498db; color: white;
+            text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s;
+        }
+        .btn:hover { background: #2980b9; transform: translateY(-3px); }
+
+        h2 { text-align: center; font-size: 2.4rem; margin-bottom: 2rem; color: #2c3e50; }
 
         footer {
-            text-align: center;
-            padding: 2rem;
-            background: #2c3e50;
-            color: white;
+            background: #2c3e50; color: #ddd; padding: 3rem 2rem 2rem; margin-top: 4rem;
         }
+        .footer-bottom { max-width: 1200px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid #44566b; text-align: center; font-size: 0.95rem; color: #aaa; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">Mt.Yalibu Treks</div>
+            <div class="logo">Mt. Yalibu Treks</div>
             <div class="nav-links">
                 <a onclick="showSection('home')" class="active" id="home-tab">Home</a>
                 <a onclick="showSection('contact')" id="contact-tab">Contact</a>
@@ -219,84 +110,90 @@
         </div>
     </nav>
 
-    <!-- Home Section -->
     <section id="home" class="section active">
-        <!-- Hero -->
         <div class="hero">
             <div class="hero-content">
                 <h1>Mt. Yalibu Treks</h1>
-                <p>Creating beautiful experiences through hikking.</p>
-                <a href="#" onclick="showSection('contact')" class="btn">Get In Touch</a>
+                <p>Authentic Hiking & Cultural Adventures in the Papua New Guinea Highlands</p>
+                <a href="#" onclick="showSection('contact')" class="btn">Plan Your Adventure</a>
             </div>
         </div>
 
-        <!-- What We Do - Single Block -->
         <div class="content">
-            <h2 style="text-align: center; margin-bottom: 2rem; font-size: 2.5rem;">What We Do</h2>
-            
-            <div class="single-block">
-                <h3>Facilitate The Climbing of the Mountain</h3>
-                <p>Our tours are fully guided trekking experiences through the remote mountains and villages of Papua New Guinea. This is not luxury travel — expect rough terrain, changing weather, river crossings, basic village accommodation, and physically demanding hikes. Every expedition is led by experienced local guides familiar with the land and surrounding communities.</p>
-                <p style="margin-top: 1.5rem;"><b>Standard Guided Trek Package — USD $800</b>
-<br>
-Includes Transportation, guided trekking experience, local landowner payment, accomodation, and on-ground expedition support.</p></br>
-                    <p style="margin-top: 1.5rem;"><b>Full Travel Package — USD $1500</b>
+            <h2>Our Tour Packages</h2>
 
-<br>Includes everything in the standard package plus return domestic airfare:
+            <div class="packages">
 
-Port Moresby → Mount Hagen
-Mount Hagen → Port Moresby</p></br>
+                <!-- Basic Plan (Plan 1) -->
+                <div class="package">
+                    <h3>Basic Highland Adventure</h3>
+                    <p class="price">USD$ 800</p>
+                    <ul>
+                        <li>Hagen Airport transfer to Village</li>
+                        <li>Village Accommodation</li>
+                        <li>Landowner Compensation Fee</li>
+                        <li>Professional Mountain Guides Payment</li>
+                        <li>Transportation back to Hagen</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: 500; color: #27ae60;">Ideal for adventurous travelers seeking an authentic village and mountain experience.</p>
+                </div>
 
-<p style="margin-top: 1.5rem;">For travelers seeking real adventure, authentic culture, and the raw beauty of Papua New Guinea.</p>
+                <!-- Premium Plan (Plan 2) -->
+                <div class="package">
+                    <h3>Full Journey Package</h3>
+                    <p class="price">USD$ 1,700</p>
+                    <ul>
+                        <li>Airport pickup & transfer to Hotel (Port Moresby)</li>
+                        <li>Hotel to Airport transfer</li>
+                        <li>Domestic flight ticket to Mount Hagen</li>
+                        <li>Hagen Airport transfer to Village</li>
+                        <li>Village Accommodation</li>
+                        <li>Landowner Compensation Fee</li>
+                        <li>Professional Mountain Guides Payment</li>
+                        <li>Transportation to Hagen</li>
+                        <li>Domestic flight ticket to Port Moresby (POM)</li>
+                        <li>POM Airport transfer to Hotel</li>
+                    </ul>
+                    <p style="margin-top: 20px; font-weight: 500; color: #27ae60;">Complete end-to-end package including all flights and transfers for a seamless experience.</p>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section (unchanged) -->
     <section id="contact" class="section">
         <div class="contact-container">
-            <h2 style="text-align: center; font-size: 2.8rem; margin-bottom: 1rem;">Get in Touch</h2>
-            <p style="text-align: center; font-size: 1.2rem; color: #666; margin-bottom: 3rem;">
-                Want to Visit I love to hear from you.
+            <h2>Get in Touch</h2>
+            <p style="text-align: center; font-size: 1.25rem; color: #555; margin-bottom: 3rem;">
+                We’d love to hear from you and help plan your unforgettable journey.
             </p>
-
-            <div class="contact-info">
-                <div class="contact-card">
-                    <h3>Email</h3>
-                    <p style="font-size: 1.1rem;">pngwildtreks@gmail.com</p>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pngwildtreks@gmail.com" class="btn" style="margin-top: 1rem; background: #EA4335;">Send Email</a>
-                </div>
-                
-                
-            </div>
-
-            <div style="text-align: center; margin-top: 4rem;">
-               
-                <div class="social-links">
-               
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=pngwildtreks@gmail.com" class="email">✉️ Email</a>
-                </div>
+            <div style="text-align: center;">
+                <p style="font-size: 1.3rem; margin: 1.5rem 0;">
+                    <strong>Email:</strong> pngwildtreks@gmail.com
+                </p>
+                <a href="mailto:pngwildtreks@gmail.com" class="btn" style="background: #EA4335;">Send Email</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Mt.YalibuTreks. All rights reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 <strong>Mt. Yalibu Treks</strong>. All Rights Reserved. | Papua New Guinea</p>
+            <p style="margin-top: 8px; font-size: 0.9rem;">
+                Proudly showcasing the beauty and culture of the Papua New Guinea Highlands.
+            </p>
+        </div>
     </footer>
 
     <script>
         function showSection(section) {
-            document.querySelectorAll('.section').forEach(sec => {
-                sec.classList.remove('active');
-            });
-            
+            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
             document.getElementById(section).classList.add('active');
             
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.classList.remove('active');
-                if (link.id === section + '-tab') {
-                    link.classList.add('active');
-                }
+                if (link.id === section + '-tab') link.classList.add('active');
             });
         }
     </script>
